@@ -1,6 +1,6 @@
 [build]
   base = "frontend"
-  publish = "frontend/out"
+  publish = "frontend/.next"
   command = "npm run build"
 
 [build.environment]
@@ -17,10 +17,8 @@
   status = 200
   force = true
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [[headers]]
   for = "/*"
