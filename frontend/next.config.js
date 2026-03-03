@@ -1,12 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   images: {
-    domains: ['via.placeholder.com', 'localhost'],
+    unoptimized: true,
+    domains: ['via.placeholder.com', 'images.unsplash.com', 'localhost'],
   },
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api',
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || '/api',
   },
+  trailingSlash: true,
 }
 
 module.exports = nextConfig

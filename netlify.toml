@@ -1,6 +1,6 @@
 [build]
   base = "frontend"
-  publish = ".next"
+  publish = "frontend/out"
   command = "npm run build"
 
 [build.environment]
@@ -14,6 +14,12 @@
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200
 
 [[headers]]
